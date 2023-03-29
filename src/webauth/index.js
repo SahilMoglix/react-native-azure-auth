@@ -106,7 +106,7 @@ export default class WebAuth {
         }
         if (tokenResponse.accessToken) {
             let accessToken = await this.client.cache.saveAccessToken(tokenResponse)
-            return accessToken
+            return tokenResponse
         } else {
             // we have to have at least id_token in respose
             return new BaseTokenItem(tokenResponse, this.clientId)
